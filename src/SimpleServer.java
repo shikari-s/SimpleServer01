@@ -1,4 +1,6 @@
 import com.sun.net.httpserver.HttpServer;
+import lec02.ImageHandler;
+import lec02.OmikujiHandler;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -10,6 +12,10 @@ public class SimpleServer {
             var httpServer = HttpServer.create(address,0);
             var simpleHandler = new SimpleHandler();
             httpServer.createContext("/hello",simpleHandler);
+            var omikujiHandler = new OmikujiHandler();
+            httpServer.createContext("/omikuji",omikujiHandler);
+            var imageHandler = new ImageHandler();
+            httpServer.createContext("/image",imageHandler);
             httpServer.start();
 
         }catch(IOException e){

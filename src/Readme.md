@@ -4,4 +4,4 @@
 
 SimpleHandler.class
 SimpleServer.class
-で簡易的なWebシステム( ~~**うんち**~~ )を作成
+で簡易的なWebシステム( ~~うんち~~ )を作成
