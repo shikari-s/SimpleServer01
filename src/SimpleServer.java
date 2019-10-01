@@ -1,6 +1,7 @@
 import com.sun.net.httpserver.HttpServer;
 import lec02.ImageHandler;
 import lec02.OmikujiHandler;
+import lec03.GetPostHandler;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -16,6 +17,8 @@ public class SimpleServer {
             httpServer.createContext("/omikuji",omikujiHandler);
             var imageHandler = new ImageHandler();
             httpServer.createContext("/image",imageHandler);
+            var getPostHandler = new GetPostHandler();
+            httpServer.createContext("/GetPost",getPostHandler);
             httpServer.start();
 
         }catch(IOException e){
